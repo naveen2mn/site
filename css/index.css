@@ -1,0 +1,35 @@
+/* header{
+    background: #eee;
+    min-height: 80px;
+    padding: 16px 0 0;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+}
+.navbar-brand{
+    background-image: url(../img/logo-pinnacle.png);
+    width: 240px;
+    height: 38px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left:0px;
+}
+li.menu-item > a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "gotham-bold", Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #333;
+    width: auto;
+    position: static;
+    flex-shrink: 1;
+    padding-bottom: 10px;   
+}
+
+.slider-wrapper{
+    margin: -20px 0 0 0;
+}
+ */

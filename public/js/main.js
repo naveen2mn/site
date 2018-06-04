@@ -1,0 +1,10 @@
+$('.btn-menu').click(function(){
+    if($(this).hasClass('active')){
+        $(this).removeClass('active');  
+        $('#myMenu').addClass('hide');
+    }
+    else{
+        $(this).addClass('active');  
+        $('#myMenu').removeClass('hide');
+    }
+})
