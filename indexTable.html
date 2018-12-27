@@ -1,0 +1,2546 @@
+<html>
+
+<head>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+@{
+ViewBag.Title = "Index";
+}
+<style>
+    .table-list {
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 500px;
+    }
+
+</style>
+<div class="wrapper">
+    <div class="inner-box">
+        <div class="inner-box-header">Custom Data Model</div>
+        <div class="inner-box-body">
+            <div class="row">
+                <div class="col-sm-3 col-md-3">
+                    <div class="list-group table-list" id="table_list">
+                        There is no content to display
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                    asdasdasd
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
+	<script>
+    var data = [
+ {
+     "TABLE_NAME": "DataDictionary_Temp",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Temp",
+     "COLUMN_NAME": "TargetId",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Temp",
+     "COLUMN_NAME": "Version",
+     "DATA_TYPE": "decimal",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Temp",
+     "COLUMN_NAME": "Category",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "150"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Temp",
+     "COLUMN_NAME": "Class",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "150"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Temp",
+     "COLUMN_NAME": "Attribute",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "150"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Temp",
+     "COLUMN_NAME": "Description",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "500"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Temp",
+     "COLUMN_NAME": "SchemaName",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Temp",
+     "COLUMN_NAME": "TableName",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Temp",
+     "COLUMN_NAME": "ColumnName",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Temp",
+     "COLUMN_NAME": "Type",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Temp",
+     "COLUMN_NAME": "ReferentialService",
+     "DATA_TYPE": "xml",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Temp",
+     "COLUMN_NAME": "ReferentialParameters",
+     "DATA_TYPE": "xml",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Temp",
+     "COLUMN_NAME": "ReferentialElements",
+     "DATA_TYPE": "xml",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Temp",
+     "COLUMN_NAME": "ReferenceType",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Temp",
+     "COLUMN_NAME": "ReferenceSections",
+     "DATA_TYPE": "xml",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Temp",
+     "COLUMN_NAME": "ReferenceTable",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Temp",
+     "COLUMN_NAME": "ReferenceName",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Temp",
+     "COLUMN_NAME": "IsActive",
+     "DATA_TYPE": "bit",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Temp",
+     "COLUMN_NAME": "CreatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Temp",
+     "COLUMN_NAME": "CreatedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Temp",
+     "COLUMN_NAME": "LastUpdatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Temp",
+     "COLUMN_NAME": "LastUpdatedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "AsyncProcessConfiguration",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AsyncProcessConfiguration",
+     "COLUMN_NAME": "AsyncProcessCode",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "10"
+ },
+ {
+     "TABLE_NAME": "AsyncProcessConfiguration",
+     "COLUMN_NAME": "TypeName",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "500"
+ },
+ {
+     "TABLE_NAME": "AsyncProcessConfiguration",
+     "COLUMN_NAME": "RequestSchema",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "AsyncProcessConfiguration",
+     "COLUMN_NAME": "ResponseSchema",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "AsyncProcessConfiguration",
+     "COLUMN_NAME": "Version",
+     "DATA_TYPE": "tinyint",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AsyncProcessConfiguration",
+     "COLUMN_NAME": "MaxRetries",
+     "DATA_TYPE": "tinyint",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AsyncProcessConfiguration",
+     "COLUMN_NAME": "MaxThreads",
+     "DATA_TYPE": "tinyint",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AsyncProcessConfiguration",
+     "COLUMN_NAME": "MaxWorkerThreads",
+     "DATA_TYPE": "tinyint",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AsyncProcessConfiguration",
+     "COLUMN_NAME": "IsActive",
+     "DATA_TYPE": "bit",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AsyncProcessConfiguration",
+     "COLUMN_NAME": "CreatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AsyncProcessConfiguration",
+     "COLUMN_NAME": "CreatedBy",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "256"
+ },
+ {
+     "TABLE_NAME": "AsyncProcessFields",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "bigint",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AsyncProcessFields",
+     "COLUMN_NAME": "AsyncProcessCode",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "10"
+ },
+ {
+     "TABLE_NAME": "AsyncProcessFields",
+     "COLUMN_NAME": "FieldType",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "AsyncProcessFields",
+     "COLUMN_NAME": "FieldName",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "AsyncProcessFields",
+     "COLUMN_NAME": "xPath",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "500"
+ },
+ {
+     "TABLE_NAME": "CodeMasters_temp",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "CodeMasters_temp",
+     "COLUMN_NAME": "Name",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "250"
+ },
+ {
+     "TABLE_NAME": "CodeDetails_temp",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "CodeDetails_temp",
+     "COLUMN_NAME": "System",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "25"
+ },
+ {
+     "TABLE_NAME": "CodeDetails_temp",
+     "COLUMN_NAME": "Code",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "250"
+ },
+ {
+     "TABLE_NAME": "CodeDetails_temp",
+     "COLUMN_NAME": "Value",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "CodeDetails_temp",
+     "COLUMN_NAME": "IsSystemDefined",
+     "DATA_TYPE": "bit",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "CodeDetails_temp",
+     "COLUMN_NAME": "CodeMaster_Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "CodeDetails_temp",
+     "COLUMN_NAME": "ParentId",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "CodeDetails_temp",
+     "COLUMN_NAME": "MetaData",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "4000"
+ },
+ {
+     "TABLE_NAME": "AsyncProcessInstance",
+     "COLUMN_NAME": "InstanceId",
+     "DATA_TYPE": "bigint",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AsyncProcessInstance",
+     "COLUMN_NAME": "SessionGuid",
+     "DATA_TYPE": "uniqueidentifier",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AsyncProcessInstance",
+     "COLUMN_NAME": "TransactionGuid",
+     "DATA_TYPE": "uniqueidentifier",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AsyncProcessInstance",
+     "COLUMN_NAME": "ReferenceType",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "10"
+ },
+ {
+     "TABLE_NAME": "AsyncProcessInstance",
+     "COLUMN_NAME": "ReferenceNo",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "AsyncProcessInstance",
+     "COLUMN_NAME": "AsyncProcessCode",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "AsyncProcessInstance",
+     "COLUMN_NAME": "Request",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "AsyncProcessInstance",
+     "COLUMN_NAME": "Response",
+     "DATA_TYPE": "xml",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "AsyncProcessInstance",
+     "COLUMN_NAME": "Retries",
+     "DATA_TYPE": "tinyint",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AsyncProcessInstance",
+     "COLUMN_NAME": "Exception",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "AsyncProcessInstance",
+     "COLUMN_NAME": "Status",
+     "DATA_TYPE": "smallint",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AsyncProcessInstance",
+     "COLUMN_NAME": "PriorityLevel",
+     "DATA_TYPE": "tinyint",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AsyncProcessInstance",
+     "COLUMN_NAME": "ParentId",
+     "DATA_TYPE": "bigint",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AsyncProcessInstance",
+     "COLUMN_NAME": "ReferenceID",
+     "DATA_TYPE": "uniqueidentifier",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AsyncProcessInstance",
+     "COLUMN_NAME": "UserName",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "256"
+ },
+ {
+     "TABLE_NAME": "AsyncProcessInstance",
+     "COLUMN_NAME": "CreatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AsyncProcessInstance",
+     "COLUMN_NAME": "ProcessedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AsyncProcessInstance",
+     "COLUMN_NAME": "URN",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "AsyncProcessInstance",
+     "COLUMN_NAME": "JobId",
+     "DATA_TYPE": "uniqueidentifier",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "IDMPVersions",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "IDMPVersions",
+     "COLUMN_NAME": "MPID",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "IDMPVersions",
+     "COLUMN_NAME": "ProcessId",
+     "DATA_TYPE": "bigint",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "IDMPVersions",
+     "COLUMN_NAME": "Reason",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "100"
+ },
+ {
+     "TABLE_NAME": "IDMPVersions",
+     "COLUMN_NAME": "ProcessCreatedBy",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "IDMPVersions",
+     "COLUMN_NAME": "ProcessCreatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "IDMPVersions",
+     "COLUMN_NAME": "versionno",
+     "DATA_TYPE": "decimal",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AsyncProcessStatus",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "bigint",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AsyncProcessStatus",
+     "COLUMN_NAME": "AsyncProcessCode",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "10"
+ },
+ {
+     "TABLE_NAME": "AsyncProcessStatus",
+     "COLUMN_NAME": "Status",
+     "DATA_TYPE": "smallint",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AsyncProcessStatus",
+     "COLUMN_NAME": "Description",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataDictionary",
+     "COLUMN_NAME": "TargetId",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataDictionary",
+     "COLUMN_NAME": "Version",
+     "DATA_TYPE": "decimal",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataDictionary",
+     "COLUMN_NAME": "Category",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "150"
+ },
+ {
+     "TABLE_NAME": "DataDictionary",
+     "COLUMN_NAME": "Class",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "150"
+ },
+ {
+     "TABLE_NAME": "DataDictionary",
+     "COLUMN_NAME": "Attribute",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "150"
+ },
+ {
+     "TABLE_NAME": "DataDictionary",
+     "COLUMN_NAME": "Description",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "500"
+ },
+ {
+     "TABLE_NAME": "DataDictionary",
+     "COLUMN_NAME": "SchemaName",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary",
+     "COLUMN_NAME": "TableName",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary",
+     "COLUMN_NAME": "ColumnName",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary",
+     "COLUMN_NAME": "Type",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary",
+     "COLUMN_NAME": "ReferentialService",
+     "DATA_TYPE": "xml",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "DataDictionary",
+     "COLUMN_NAME": "ReferentialParameters",
+     "DATA_TYPE": "xml",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "DataDictionary",
+     "COLUMN_NAME": "ReferentialElements",
+     "DATA_TYPE": "xml",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "DataDictionary",
+     "COLUMN_NAME": "ReferenceType",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary",
+     "COLUMN_NAME": "ReferenceSections",
+     "DATA_TYPE": "xml",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "DataDictionary",
+     "COLUMN_NAME": "ReferenceTable",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary",
+     "COLUMN_NAME": "ReferenceName",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary",
+     "COLUMN_NAME": "IsActive",
+     "DATA_TYPE": "bit",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataDictionary",
+     "COLUMN_NAME": "CreatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataDictionary",
+     "COLUMN_NAME": "CreatedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary",
+     "COLUMN_NAME": "LastUpdatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataDictionary",
+     "COLUMN_NAME": "LastUpdatedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ActivityLogDetail",
+     "COLUMN_NAME": "DetailID",
+     "DATA_TYPE": "bigint",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ActivityLogDetail",
+     "COLUMN_NAME": "EventDate",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ActivityLogDetail",
+     "COLUMN_NAME": "Event",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "1000"
+ },
+ {
+     "TABLE_NAME": "ActivityLogDetail",
+     "COLUMN_NAME": "Data",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "ActivityLogDetail",
+     "COLUMN_NAME": "Status",
+     "DATA_TYPE": "bit",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ActivityLogDetail",
+     "COLUMN_NAME": "TranID",
+     "DATA_TYPE": "uniqueidentifier",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ActivityLogDetail",
+     "COLUMN_NAME": "ModifiedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ActivityLogDetail",
+     "COLUMN_NAME": "IsEditable",
+     "DATA_TYPE": "bit",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ActivityLogDetail",
+     "COLUMN_NAME": "FlexField1",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "2000"
+ },
+ {
+     "TABLE_NAME": "ActivityLogDetail",
+     "COLUMN_NAME": "FlexField2",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "2000"
+ },
+ {
+     "TABLE_NAME": "ActivityLogDetail",
+     "COLUMN_NAME": "FlexField3",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "2000"
+ },
+ {
+     "TABLE_NAME": "ActivityLogDetail",
+     "COLUMN_NAME": "FlexField4",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "2000"
+ },
+ {
+     "TABLE_NAME": "ActivityLogDetail",
+     "COLUMN_NAME": "FlexField5",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "2000"
+ },
+ {
+     "TABLE_NAME": "ActivityLogHeader",
+     "COLUMN_NAME": "TranID",
+     "DATA_TYPE": "uniqueidentifier",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ActivityLogHeader",
+     "COLUMN_NAME": "UserId",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ActivityLogHeader",
+     "COLUMN_NAME": "TranType",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ActivityLogHeader",
+     "COLUMN_NAME": "TranGuid",
+     "DATA_TYPE": "uniqueidentifier",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ActivityLogHeader",
+     "COLUMN_NAME": "TranRefNo",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ActivityLogHeader",
+     "COLUMN_NAME": "ActionDate",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ActivityLogHeader",
+     "COLUMN_NAME": "Status",
+     "DATA_TYPE": "bit",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ActivityLogHeader",
+     "COLUMN_NAME": "Complete",
+     "DATA_TYPE": "bit",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ActivityLogHeader",
+     "COLUMN_NAME": "SessionGuid",
+     "DATA_TYPE": "uniqueidentifier",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ActivityLogHeader",
+     "COLUMN_NAME": "BECode",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ActivityLogHeader",
+     "COLUMN_NAME": "BEType",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ActivityLogHeader",
+     "COLUMN_NAME": "HostName",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "100"
+ },
+ {
+     "TABLE_NAME": "DataSources",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataSources",
+     "COLUMN_NAME": "Name",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataSources",
+     "COLUMN_NAME": "Type",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataSources",
+     "COLUMN_NAME": "ConnectionString",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "1000"
+ },
+ {
+     "TABLE_NAME": "DataSources",
+     "COLUMN_NAME": "IsSystemDefined",
+     "DATA_TYPE": "bit",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataSources",
+     "COLUMN_NAME": "IsActive",
+     "DATA_TYPE": "bit",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataSources",
+     "COLUMN_NAME": "CreatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataSources",
+     "COLUMN_NAME": "CreatedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataSources",
+     "COLUMN_NAME": "LastUpdatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataSources",
+     "COLUMN_NAME": "LastUpdatedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage",
+     "COLUMN_NAME": "Category",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage",
+     "COLUMN_NAME": "Classname",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage",
+     "COLUMN_NAME": "Attribute",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage",
+     "COLUMN_NAME": "Value",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage",
+     "COLUMN_NAME": "SourceType",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage",
+     "COLUMN_NAME": "Filename",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "250"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage",
+     "COLUMN_NAME": "Username",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage",
+     "COLUMN_NAME": "ReferenceId",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage",
+     "COLUMN_NAME": "Version",
+     "DATA_TYPE": "smallint",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage",
+     "COLUMN_NAME": "IsMultiValue",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage",
+     "COLUMN_NAME": "Created",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage",
+     "COLUMN_NAME": "LastModified",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage",
+     "COLUMN_NAME": "Mode",
+     "DATA_TYPE": "char",
+     "LENGTH": "1"
+ },
+ {
+     "TABLE_NAME": "AuditLog",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AuditLog",
+     "COLUMN_NAME": "Event",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "AuditLog",
+     "COLUMN_NAME": "SessionId",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "AuditLog",
+     "COLUMN_NAME": "UserId",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "100"
+ },
+ {
+     "TABLE_NAME": "AuditLog",
+     "COLUMN_NAME": "ObjectId",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "AuditLog",
+     "COLUMN_NAME": "ObjectType",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "AuditLog",
+     "COLUMN_NAME": "ReferenceSystem",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "10"
+ },
+ {
+     "TABLE_NAME": "AuditLog",
+     "COLUMN_NAME": "ReferenceId",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AuditLog",
+     "COLUMN_NAME": "Reason",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "100"
+ },
+ {
+     "TABLE_NAME": "AuditLog",
+     "COLUMN_NAME": "TimeStamp",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "CodeMasters",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "CodeMasters",
+     "COLUMN_NAME": "Name",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "250"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Latest",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Latest",
+     "COLUMN_NAME": "TargetId",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Latest",
+     "COLUMN_NAME": "Version",
+     "DATA_TYPE": "decimal",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Latest",
+     "COLUMN_NAME": "Category",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "150"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Latest",
+     "COLUMN_NAME": "Class",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "150"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Latest",
+     "COLUMN_NAME": "Attribute",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "150"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Latest",
+     "COLUMN_NAME": "Description",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "500"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Latest",
+     "COLUMN_NAME": "SchemaName",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Latest",
+     "COLUMN_NAME": "TableName",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Latest",
+     "COLUMN_NAME": "ColumnName",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Latest",
+     "COLUMN_NAME": "Type",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Latest",
+     "COLUMN_NAME": "ReferentialService",
+     "DATA_TYPE": "xml",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Latest",
+     "COLUMN_NAME": "ReferentialParameters",
+     "DATA_TYPE": "xml",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Latest",
+     "COLUMN_NAME": "ReferentialElements",
+     "DATA_TYPE": "xml",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Latest",
+     "COLUMN_NAME": "ReferenceType",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Latest",
+     "COLUMN_NAME": "ReferenceSections",
+     "DATA_TYPE": "xml",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Latest",
+     "COLUMN_NAME": "ReferenceTable",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Latest",
+     "COLUMN_NAME": "ReferenceName",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Latest",
+     "COLUMN_NAME": "IsActive",
+     "DATA_TYPE": "bit",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Latest",
+     "COLUMN_NAME": "CreatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Latest",
+     "COLUMN_NAME": "CreatedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Latest",
+     "COLUMN_NAME": "LastUpdatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataDictionary_Latest",
+     "COLUMN_NAME": "LastUpdatedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "vm_er_joblist",
+     "COLUMN_NAME": "JobId",
+     "DATA_TYPE": "uniqueidentifier",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "vm_er_joblist",
+     "COLUMN_NAME": "JobName",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "128"
+ },
+ {
+     "TABLE_NAME": "vm_er_joblist",
+     "COLUMN_NAME": "StepName",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "128"
+ },
+ {
+     "TABLE_NAME": "vm_er_joblist",
+     "COLUMN_NAME": "ScheduleName",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "128"
+ },
+ {
+     "TABLE_NAME": "vm_er_joblist",
+     "COLUMN_NAME": "database_name",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "128"
+ },
+ {
+     "TABLE_NAME": "vm_er_joblist",
+     "COLUMN_NAME": "command",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "vm_er_joblist",
+     "COLUMN_NAME": "freq_type",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "vm_er_joblist",
+     "COLUMN_NAME": "freq_interval",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "vm_er_joblist",
+     "COLUMN_NAME": "freq_subday_type",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "vm_er_joblist",
+     "COLUMN_NAME": "freq_subday_interval",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "vm_er_joblist",
+     "COLUMN_NAME": "active_start_date",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "vm_er_joblist",
+     "COLUMN_NAME": "active_start_time",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "vm_er_joblist",
+     "COLUMN_NAME": "active_end_date",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "vm_er_joblist",
+     "COLUMN_NAME": "active_end_time",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "vm_er_joblist",
+     "COLUMN_NAME": "freq_recurrence_factor",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "vm_er_joblist",
+     "COLUMN_NAME": "freq_relative_interval",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "vw_er_jobhistory",
+     "COLUMN_NAME": "JobId",
+     "DATA_TYPE": "uniqueidentifier",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "vw_er_jobhistory",
+     "COLUMN_NAME": "JobName",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "128"
+ },
+ {
+     "TABLE_NAME": "vw_er_jobhistory",
+     "COLUMN_NAME": "run_date",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "vw_er_jobhistory",
+     "COLUMN_NAME": "run_time",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "vw_er_jobhistory",
+     "COLUMN_NAME": "RunDateTime",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "vw_er_jobhistory",
+     "COLUMN_NAME": "run_duration",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataTargets",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataTargets",
+     "COLUMN_NAME": "Name",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataTargets",
+     "COLUMN_NAME": "Type",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataTargets",
+     "COLUMN_NAME": "ConnectionString",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "1000"
+ },
+ {
+     "TABLE_NAME": "DataTargets",
+     "COLUMN_NAME": "IsActive",
+     "DATA_TYPE": "bit",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataTargets",
+     "COLUMN_NAME": "CreatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataTargets",
+     "COLUMN_NAME": "CreatedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataTargets",
+     "COLUMN_NAME": "LastUpdatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataTargets",
+     "COLUMN_NAME": "LastUpdatedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataPriority",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataPriority",
+     "COLUMN_NAME": "DataDictionaryId",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataPriority",
+     "COLUMN_NAME": "Priority1",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataPriority",
+     "COLUMN_NAME": "Priority2",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataPriority",
+     "COLUMN_NAME": "Priority3",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataPriority",
+     "COLUMN_NAME": "CreatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataPriority",
+     "COLUMN_NAME": "CreatedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataPriority",
+     "COLUMN_NAME": "LastUpdatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataPriority",
+     "COLUMN_NAME": "LastUpdatedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractFiles",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractFiles",
+     "COLUMN_NAME": "Name",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "250"
+ },
+ {
+     "TABLE_NAME": "ExtractFiles",
+     "COLUMN_NAME": "Type",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractFiles",
+     "COLUMN_NAME": "Size",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractFiles",
+     "COLUMN_NAME": "IsArchived",
+     "DATA_TYPE": "bit",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractFiles",
+     "COLUMN_NAME": "UploadedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractFiles",
+     "COLUMN_NAME": "UploadedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractFiles",
+     "COLUMN_NAME": "ArchivedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractFiles",
+     "COLUMN_NAME": "ArchivedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractFiles",
+     "COLUMN_NAME": "TemplateID",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractMappings",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractMappings",
+     "COLUMN_NAME": "SourceType",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractMappings",
+     "COLUMN_NAME": "SourceId",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractMappings",
+     "COLUMN_NAME": "Version",
+     "DATA_TYPE": "decimal",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractMappings",
+     "COLUMN_NAME": "MapType",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "10"
+ },
+ {
+     "TABLE_NAME": "ExtractMappings",
+     "COLUMN_NAME": "Section",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractMappings",
+     "COLUMN_NAME": "Attribute",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractMappings",
+     "COLUMN_NAME": "Query",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "ExtractMappings",
+     "COLUMN_NAME": "IsMultiValued",
+     "DATA_TYPE": "bit",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractMappings",
+     "COLUMN_NAME": "DefaultValue",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractMappings",
+     "COLUMN_NAME": "DataFormat",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "150"
+ },
+ {
+     "TABLE_NAME": "ExtractMappings",
+     "COLUMN_NAME": "DictionaryId",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractMappings",
+     "COLUMN_NAME": "SortOrder",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractMappings",
+     "COLUMN_NAME": "IsActive",
+     "DATA_TYPE": "bit",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractMappings",
+     "COLUMN_NAME": "Keywords",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "250"
+ },
+ {
+     "TABLE_NAME": "ExtractMappings",
+     "COLUMN_NAME": "CreatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractMappings",
+     "COLUMN_NAME": "CreatedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractMappings",
+     "COLUMN_NAME": "LastModifiedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractMappings",
+     "COLUMN_NAME": "LastModifiedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractSchedules",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractSchedules",
+     "COLUMN_NAME": "Name",
+     "DATA_TYPE": "nchar",
+     "LENGTH": "10"
+ },
+ {
+     "TABLE_NAME": "ExtractSchedules",
+     "COLUMN_NAME": "Description",
+     "DATA_TYPE": "nchar",
+     "LENGTH": "10"
+ },
+ {
+     "TABLE_NAME": "ExtractSchedules",
+     "COLUMN_NAME": "MapId",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractSchedules",
+     "COLUMN_NAME": "Frequency",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractSchedules",
+     "COLUMN_NAME": "Interval",
+     "DATA_TYPE": "nchar",
+     "LENGTH": "6"
+ },
+ {
+     "TABLE_NAME": "ExtractSchedules",
+     "COLUMN_NAME": "Configuration",
+     "DATA_TYPE": "xml",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "ExtractSchedules",
+     "COLUMN_NAME": "StartDate",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractSchedules",
+     "COLUMN_NAME": "EndDate",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractSchedules",
+     "COLUMN_NAME": "IsActive",
+     "DATA_TYPE": "bit",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractSchedules",
+     "COLUMN_NAME": "CreatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractSchedules",
+     "COLUMN_NAME": "CreatedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractVersions",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractVersions",
+     "COLUMN_NAME": "ProcessXRefId",
+     "DATA_TYPE": "bigint",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractVersions",
+     "COLUMN_NAME": "Version",
+     "DATA_TYPE": "decimal",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractVersions",
+     "COLUMN_NAME": "Data",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "ExtractVersions",
+     "COLUMN_NAME": "CreatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractVersions",
+     "COLUMN_NAME": "CreatedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ProcessAttributes",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ProcessAttributes",
+     "COLUMN_NAME": "ProcessId",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ProcessAttributes",
+     "COLUMN_NAME": "Attribute",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "150"
+ },
+ {
+     "TABLE_NAME": "ProcessAttributes",
+     "COLUMN_NAME": "Value",
+     "DATA_TYPE": "xml",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "ProcessAttributes",
+     "COLUMN_NAME": "CreatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ProcessAttributes",
+     "COLUMN_NAME": "CreatedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "Processes",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "Processes",
+     "COLUMN_NAME": "Name",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "150"
+ },
+ {
+     "TABLE_NAME": "Processes",
+     "COLUMN_NAME": "Type",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "Processes",
+     "COLUMN_NAME": "System",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "10"
+ },
+ {
+     "TABLE_NAME": "Processes",
+     "COLUMN_NAME": "State",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "Processes",
+     "COLUMN_NAME": "Access",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "Processes",
+     "COLUMN_NAME": "Result",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "500"
+ },
+ {
+     "TABLE_NAME": "Processes",
+     "COLUMN_NAME": "ParentId",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "Processes",
+     "COLUMN_NAME": "CreatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "Processes",
+     "COLUMN_NAME": "CreatedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "AspNetRoles",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "128"
+ },
+ {
+     "TABLE_NAME": "AspNetRoles",
+     "COLUMN_NAME": "Name",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "256"
+ },
+ {
+     "TABLE_NAME": "AspNetUserRoles",
+     "COLUMN_NAME": "UserId",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "128"
+ },
+ {
+     "TABLE_NAME": "AspNetUserRoles",
+     "COLUMN_NAME": "RoleId",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "128"
+ },
+ {
+     "TABLE_NAME": "UserSession",
+     "COLUMN_NAME": "SessionId",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "UserSession",
+     "COLUMN_NAME": "UserId",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "256"
+ },
+ {
+     "TABLE_NAME": "UserSession",
+     "COLUMN_NAME": "System",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "UserSession",
+     "COLUMN_NAME": "Referer",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "1000"
+ },
+ {
+     "TABLE_NAME": "UserSession",
+     "COLUMN_NAME": "LoggedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "UserSession",
+     "COLUMN_NAME": "LoggedOff",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AspNetUsers",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "128"
+ },
+ {
+     "TABLE_NAME": "AspNetUsers",
+     "COLUMN_NAME": "Email",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "256"
+ },
+ {
+     "TABLE_NAME": "AspNetUsers",
+     "COLUMN_NAME": "EmailConfirmed",
+     "DATA_TYPE": "bit",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AspNetUsers",
+     "COLUMN_NAME": "PasswordHash",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "AspNetUsers",
+     "COLUMN_NAME": "SecurityStamp",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "AspNetUsers",
+     "COLUMN_NAME": "PhoneNumber",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "AspNetUsers",
+     "COLUMN_NAME": "PhoneNumberConfirmed",
+     "DATA_TYPE": "bit",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AspNetUsers",
+     "COLUMN_NAME": "TwoFactorEnabled",
+     "DATA_TYPE": "bit",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AspNetUsers",
+     "COLUMN_NAME": "LockoutEndDateUtc",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AspNetUsers",
+     "COLUMN_NAME": "LockoutEnabled",
+     "DATA_TYPE": "bit",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AspNetUsers",
+     "COLUMN_NAME": "AccessFailedCount",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AspNetUsers",
+     "COLUMN_NAME": "UserName",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "256"
+ },
+ {
+     "TABLE_NAME": "AspNetUserClaims",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "AspNetUserClaims",
+     "COLUMN_NAME": "UserId",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "128"
+ },
+ {
+     "TABLE_NAME": "AspNetUserClaims",
+     "COLUMN_NAME": "ClaimType",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "AspNetUserClaims",
+     "COLUMN_NAME": "ClaimValue",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "AspNetUserLogins",
+     "COLUMN_NAME": "LoginProvider",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "128"
+ },
+ {
+     "TABLE_NAME": "AspNetUserLogins",
+     "COLUMN_NAME": "ProviderKey",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "128"
+ },
+ {
+     "TABLE_NAME": "AspNetUserLogins",
+     "COLUMN_NAME": "UserId",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "128"
+ },
+ {
+     "TABLE_NAME": "__MigrationHistory",
+     "COLUMN_NAME": "MigrationId",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "150"
+ },
+ {
+     "TABLE_NAME": "__MigrationHistory",
+     "COLUMN_NAME": "ContextKey",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "300"
+ },
+ {
+     "TABLE_NAME": "__MigrationHistory",
+     "COLUMN_NAME": "Model",
+     "DATA_TYPE": "varbinary",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "__MigrationHistory",
+     "COLUMN_NAME": "ProductVersion",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "32"
+ },
+ {
+     "TABLE_NAME": "DataPriority_Temp",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataPriority_Temp",
+     "COLUMN_NAME": "DataDictionaryId",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataPriority_Temp",
+     "COLUMN_NAME": "Priority1",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataPriority_Temp",
+     "COLUMN_NAME": "Priority2",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataPriority_Temp",
+     "COLUMN_NAME": "Priority3",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataPriority_Temp",
+     "COLUMN_NAME": "CreatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataPriority_Temp",
+     "COLUMN_NAME": "CreatedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "DataPriority_Temp",
+     "COLUMN_NAME": "LastUpdatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "DataPriority_Temp",
+     "COLUMN_NAME": "LastUpdatedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage_temp",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage_temp",
+     "COLUMN_NAME": "Category",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage_temp",
+     "COLUMN_NAME": "Classname",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage_temp",
+     "COLUMN_NAME": "Attribute",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage_temp",
+     "COLUMN_NAME": "Value",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage_temp",
+     "COLUMN_NAME": "SourceType",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage_temp",
+     "COLUMN_NAME": "Filename",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "250"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage_temp",
+     "COLUMN_NAME": "Username",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage_temp",
+     "COLUMN_NAME": "ReferenceId",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage_temp",
+     "COLUMN_NAME": "Version",
+     "DATA_TYPE": "smallint",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage_temp",
+     "COLUMN_NAME": "IsMultiValue",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage_temp",
+     "COLUMN_NAME": "Created",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage_temp",
+     "COLUMN_NAME": "LastModified",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractReadyStage_temp",
+     "COLUMN_NAME": "Mode",
+     "DATA_TYPE": "char",
+     "LENGTH": "1"
+ },
+ {
+     "TABLE_NAME": "CodeDetails",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "CodeDetails",
+     "COLUMN_NAME": "System",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "25"
+ },
+ {
+     "TABLE_NAME": "CodeDetails",
+     "COLUMN_NAME": "Code",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "250"
+ },
+ {
+     "TABLE_NAME": "CodeDetails",
+     "COLUMN_NAME": "Value",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "CodeDetails",
+     "COLUMN_NAME": "IsSystemDefined",
+     "DATA_TYPE": "bit",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "CodeDetails",
+     "COLUMN_NAME": "CodeMaster_Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "CodeDetails",
+     "COLUMN_NAME": "ParentId",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "CodeDetails",
+     "COLUMN_NAME": "MetaData",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "4000"
+ },
+ {
+     "TABLE_NAME": "Vw_Country",
+     "COLUMN_NAME": "Code",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "250"
+ },
+ {
+     "TABLE_NAME": "Vw_Country",
+     "COLUMN_NAME": "Value",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "Vw_Country",
+     "COLUMN_NAME": "ParentCode",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "250"
+ },
+ {
+     "TABLE_NAME": "Vw_Country",
+     "COLUMN_NAME": "MetaData",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "4000"
+ },
+ {
+     "TABLE_NAME": "Vw_ApplicationType",
+     "COLUMN_NAME": "Code",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "250"
+ },
+ {
+     "TABLE_NAME": "Vw_ApplicationType",
+     "COLUMN_NAME": "Value",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "Vw_ApplicationType",
+     "COLUMN_NAME": "ParentCode",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "250"
+ },
+ {
+     "TABLE_NAME": "Vw_ApplicationType",
+     "COLUMN_NAME": "MetaData",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "4000"
+ },
+ {
+     "TABLE_NAME": "Vw_ApplicationProcedure",
+     "COLUMN_NAME": "Code",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "250"
+ },
+ {
+     "TABLE_NAME": "Vw_ApplicationProcedure",
+     "COLUMN_NAME": "Value",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "Vw_ApplicationProcedure",
+     "COLUMN_NAME": "ParentCode",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "250"
+ },
+ {
+     "TABLE_NAME": "Vw_ApplicationProcedure",
+     "COLUMN_NAME": "MetaData",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "4000"
+ },
+ {
+     "TABLE_NAME": "Vw_ProductName",
+     "COLUMN_NAME": "Code",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "250"
+ },
+ {
+     "TABLE_NAME": "Vw_ProductName",
+     "COLUMN_NAME": "Value",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "Vw_ProductName",
+     "COLUMN_NAME": "ParentCode",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "250"
+ },
+ {
+     "TABLE_NAME": "Vw_ProductName",
+     "COLUMN_NAME": "MetaData",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "4000"
+ },
+ {
+     "TABLE_NAME": "Vw_TradeName",
+     "COLUMN_NAME": "Code",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "250"
+ },
+ {
+     "TABLE_NAME": "Vw_TradeName",
+     "COLUMN_NAME": "Value",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "Vw_TradeName",
+     "COLUMN_NAME": "ParentCode",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "250"
+ },
+ {
+     "TABLE_NAME": "Vw_TradeName",
+     "COLUMN_NAME": "MetaData",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "4000"
+ },
+ {
+     "TABLE_NAME": "Vw_RegulatoryBody",
+     "COLUMN_NAME": "Code",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "250"
+ },
+ {
+     "TABLE_NAME": "Vw_RegulatoryBody",
+     "COLUMN_NAME": "Value",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyArchive",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractReadyArchive",
+     "COLUMN_NAME": "Category",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyArchive",
+     "COLUMN_NAME": "Classname",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyArchive",
+     "COLUMN_NAME": "Attribute",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyArchive",
+     "COLUMN_NAME": "Value",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyArchive",
+     "COLUMN_NAME": "SourceType",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyArchive",
+     "COLUMN_NAME": "Filename",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "250"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyArchive",
+     "COLUMN_NAME": "Username",
+     "DATA_TYPE": "varchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ExtractReadyArchive",
+     "COLUMN_NAME": "ReferenceId",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractReadyArchive",
+     "COLUMN_NAME": "Version",
+     "DATA_TYPE": "smallint",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractReadyArchive",
+     "COLUMN_NAME": "IsMultiValue",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractReadyArchive",
+     "COLUMN_NAME": "Created",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractReadyArchive",
+     "COLUMN_NAME": "LastModified",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractReadyArchive",
+     "COLUMN_NAME": "RunDate",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ExtractReadyArchive",
+     "COLUMN_NAME": "Mode",
+     "DATA_TYPE": "char",
+     "LENGTH": "1"
+ },
+ {
+     "TABLE_NAME": "Vw_Submission_Type",
+     "COLUMN_NAME": "Code",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "250"
+ },
+ {
+     "TABLE_NAME": "Vw_Submission_Type",
+     "COLUMN_NAME": "Value",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "Vw_DossageForm",
+     "COLUMN_NAME": "Code",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "250"
+ },
+ {
+     "TABLE_NAME": "Vw_DossageForm",
+     "COLUMN_NAME": "Value",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "Vw_ActiveSubstance",
+     "COLUMN_NAME": "Code",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "250"
+ },
+ {
+     "TABLE_NAME": "Vw_ActiveSubstance",
+     "COLUMN_NAME": "Value",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "-1"
+ },
+ {
+     "TABLE_NAME": "ProcessXRefs",
+     "COLUMN_NAME": "Id",
+     "DATA_TYPE": "bigint",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ProcessXRefs",
+     "COLUMN_NAME": "ProcessId",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ProcessXRefs",
+     "COLUMN_NAME": "SourceId",
+     "DATA_TYPE": "int",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ProcessXRefs",
+     "COLUMN_NAME": "Source",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ProcessXRefs",
+     "COLUMN_NAME": "SourceType",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ProcessXRefs",
+     "COLUMN_NAME": "IsProcessed",
+     "DATA_TYPE": "bit",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ProcessXRefs",
+     "COLUMN_NAME": "IsMapped",
+     "DATA_TYPE": "bit",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ProcessXRefs",
+     "COLUMN_NAME": "CreatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ProcessXRefs",
+     "COLUMN_NAME": "CreatedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ },
+ {
+     "TABLE_NAME": "ProcessXRefs",
+     "COLUMN_NAME": "LastUpdatedOn",
+     "DATA_TYPE": "datetime",
+     "LENGTH": null
+ },
+ {
+     "TABLE_NAME": "ProcessXRefs",
+     "COLUMN_NAME": "LastUpdatedBy",
+     "DATA_TYPE": "nvarchar",
+     "LENGTH": "50"
+ }
+    ]
+
+    function groupBy(xs, key) {
+        return xs.reduce(function (rv, x) {
+            (rv[x[key]] = rv[x[key]] || []).push(x);
+            return rv;
+        }, {});
+    }
+
+    
+    var x = groupBy(data, 'TABLE_NAME');
+    console.log(arrayFromObject(x));
+    var tableList = arrayFromObject(x);
+    function arrayFromObject(obj) {
+        var arr = [];
+        for (var i in obj) {
+            arr.push(obj[i]);
+        }
+        console.log(arr)
+        return arr;
+    }
+
+   // renderTableList();
+
+
+    function renderTableList() {
+        console.log(tableList);
+        let tableContainer = $('#table_list');
+        tableContainer.empty();
+        
+        tableList.forEach(function(item){
+            console.log(tableList[i])
+            let columnCount = 0;
+            if (item.COLUMN_NAME) {
+                columnCount = item.COLUMN_NAME.length || 0;
+            }
+            
+            tableHtml += '<a href="#" class="list-group-item">' + item.tableName + '<span class="badge">' + columnCount + '</span></a>'
+        })
+        tableContainer.append(tableHtml);
+    }
+</script>
+</body>
+
+</html>
