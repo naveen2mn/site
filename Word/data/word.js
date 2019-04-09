@@ -1,5 +1,6 @@
-	var data = `ability
-	world
+var data = `
+ability
+world
 worry
 would
 write
@@ -13,4 +14,5 @@ yet
 you
 young
 your
-yourself`;
+yourself
+`;

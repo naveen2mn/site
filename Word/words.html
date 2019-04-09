@@ -15,11 +15,9 @@ input:invalid {
     box-shadow: inset 0 0 5px #ccc;
 }
 #text{
-left: 50%;
     font-size: 30px;
     color: darkgreen;
-    position: absolute;
-    top: 50%;
+    position: absolute;   
     transform: translate(-50%,-50%);
 	}
 #time_left {
@@ -27,10 +25,8 @@ left: 50%;
     font-size: x-large;
 }
 .static{
-	position:absolute;
 	top:50%;
 	left: 50%;
-	transform: translate(-50%,-50%)
 }
 .light-box{
 	position:absolute;
@@ -69,6 +65,17 @@ background-color: rgba(0,0,0,0.5);
     height: 0px;
     overflow: hidden;
     animation: 0.3s ease-in;
+}
+.list-item {
+    box-shadow: 0 0 5px 2px #ccc;
+    margin: 5px;
+    padding: 2px 4px;
+	    display: inline-table;
+}
+.list-group{
+padding: 2px;
+    height: calc(100% - 70px);
+	    overflow: auto;
 }
 	</style>
 </head>
@@ -139,11 +146,13 @@ background-color: rgba(0,0,0,0.5);
 			if($('button[type=res]').html()=='Close'){
 				window.location.reload();
 			}
-			var html='<ul>';
+			var html='<h4>Words List</h4>';
+			html +='<div class="list-group" >';
 			result.forEach(function(e) {
-				html+='<li>'+e+'</li>'
+				html+='<span class="list-item">'+e+'</span>'
 			});
-			html+='</ul'>
+			html+='</div>';
+			
 			$('#info_box').append(html)
 			$('button[type=res]').html('Close');
 		})
@@ -152,9 +161,12 @@ background-color: rgba(0,0,0,0.5);
 			
 		}
 		function render(min,sec,mod){
-		
+			min=0.1;
 			if(mod == 1){
-				$('#text').addClass('static');
+				//$('#text').addClass('static');
+			}
+			else{
+				
 			}
 			var count = Math.ceil((min*60)/sec);
 			var c =min*60;
@@ -165,27 +177,34 @@ background-color: rgba(0,0,0,0.5);
 				}
 				
 			}, 1000);
+			
 			var refreshId = setInterval(function() {
-				var rand = words[(Math.random() * words.length) | 0]
-				if(result.indexOf(rand) == -1){
-					count--;
-					if (count > 0) {
-						result.push(rand);
-						console.log(rand)
-						//$("#text").html(rand)
-						//$("#text").show();	
-						$('#text').hide().html(rand).fadeIn('slow');
-					}
-					else{
-						clearInterval(refreshId);
-						$('button[type=submit]').removeAttr('disabled')
-						onLoader();
-					}
-					
-					}
-				
+				var rand = getWord();
+				count--;
+				if (count > 0) {
+					$('#text').hide().html(rand).fadeIn('slow');
+				}
+				else{
+					$('button[type=submit]').removeAttr('disabled')
+					onLoader();
+					console.log('Creal')
+					clearInterval(refreshId);
+				}
+
+				var w = Math.floor(Math.random() * Math.floor(100));
+				w = w<10 ? w+10: w;
+				var h = 100-w;
+				$('#text').css('top',w+'%');
+				$('#text').css('left',h+'%');
 			}, sec*1000);
 						
+		}
+		function getWord(){
+			var rand = words[(Math.random() * words.length) | 0];
+			if(result.indexOf(rand) == -1){
+				result.push(rand);
+				return rand;
+			}
 		}
 		function onLoader(){
 			$('.light-box').removeClass('hide')
