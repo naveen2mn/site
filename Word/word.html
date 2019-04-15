@@ -1,19 +1,24 @@
 <html><head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="lib/bootstrap.min.css" rel="stylesheet" type="text/css">
-	<link href="" rel="stylesheet" type="text/css">
+	<link href="word.css" rel="stylesheet" type="text/css">
 	<style>
-
+	/*
+#wrapper{
+    box-shadow: inset 0 0 2px #ccc;
+	position: absolute;
+    top: 120px;
+    left: 10px;
+    right: 10px;
+    height: calc(100% - 130px);
+}
 	input:valid {
   color: green;
 }
 input:invalid {
   color: red;
 }
-#wrapper{
-    height: calc(100vh - 130px);
-    box-shadow: inset 0 0 5px #ccc;
-}
+
 #text{
     font-size: 30px;
     color: darkgreen;
@@ -76,7 +81,8 @@ background-color: rgba(0,0,0,0.5);
 padding: 2px;
     height: calc(100% - 70px);
 	    overflow: auto;
-}
+
+}*/
 	</style>
 </head>
 
@@ -107,10 +113,11 @@ padding: 2px;
 				<div class="pull-right" id="time_left"></div>
 			</div>
 		</form>
-		<div id="wrapper" class="hide">
+		
+	</div>	
+	<div id="wrapper" class="hide">
 			<div id="text"></div>
 		</div>
-	</div>	
 	<div class="light-box hide">
 		<div id="info_box">
 			<button type="res">Result</button>
@@ -186,17 +193,23 @@ padding: 2px;
 				else{
 					$('button[type=submit]').removeAttr('disabled')
 					onLoader();
-					console.log('Creal')
 					clearInterval(refreshId);
 				}
-
-				var w = Math.floor(Math.random() * Math.floor(100));
-				w = w<10 ? w+10: w;
-				var h = 100-w;
-				$('#text').css('top',w+'%');
-				$('#text').css('left',h+'%');
+				//renderDynamic()
 			}, sec*1000);
 						
+		}
+		function renderDynamic(){
+			var min_x = 100;
+			var max_x = 200;
+			var min_y = 100;
+			var max_y = 200;
+			var rand_x=0;
+			var rand_y=0;
+			
+			rand_x = Math.round(min_x + ((max_x - min_x)*(Math.random() % 1)));
+			rand_y = Math.round(min_y + ((max_y - min_y)*(Math.random() % 1)));
+			$('#text').css({left:rand_x, top: rand_y});
 		}
 		function getWord(){
 			var rand = words[(Math.random() * words.length) | 0];
