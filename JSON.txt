@@ -1,4 +1,20 @@
-[
+            "ProductInfo": {
+                "Productfamily": [],
+                "ProductName": "",
+                "ProductClassification": [],
+                "ProductCategory": [
+                    code
+                ],
+                "ProductSubCategory": [],
+                "ProductType": [],
+                "PrescriptionStatus": [],
+                "OrphanDrug": [],
+                "Pediatric": [],
+                "ProductOwner": [],
+                "Active": true
+            }, 
+            
+            [
     {
         "Code":"Development",
         "Value":"1"
