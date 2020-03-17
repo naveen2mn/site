@@ -1,0 +1,66 @@
+[
+    {
+        "Code":"Development",
+        "Value":"1"
+    },
+    {
+        "Code":"Authorized",
+        "Value":"2"
+    }
+]
+[
+    {
+        "Code":"API",
+        "Value":"1"
+    },
+    {
+        "Code":"Formulation",
+        "Value":"2"
+    }
+]
+
+[
+    {
+        "Code":"Generic Product",
+        "Value":"1"
+    },
+    {
+        "Code":"Innovator Product",
+        "Value":"2"
+    }
+]
+
+[
+    {
+        "Code":"OTC",
+        "Value":"1"
+    },
+    {
+        "Code":"Rx",
+        "Value":"2"
+    }
+]
+[
+    {
+        "Code":"Yes",
+        "Value":"1"
+    },
+    {
+        "Code":"No",
+        "Value":"2"
+    }
+]
+[
+    {
+        "Code":"Yes",
+        "Value":"1"
+    },
+    {
+        "Code":"No",
+        "Value":"2"
+    },
+    {
+        "Code":"Both",
+        "Value":"3"
+    }
+]
