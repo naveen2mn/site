@@ -1,82 +1,75 @@
-            "ProductInfo": {
-                "Productfamily": [],
-                "ProductName": "",
-                "ProductClassification": [],
-                "ProductCategory": [
-                    code
-                ],
-                "ProductSubCategory": [],
-                "ProductType": [],
-                "PrescriptionStatus": [],
-                "OrphanDrug": [],
-                "Pediatric": [],
-                "ProductOwner": [],
-                "Active": true
-            }, 
-            
-            [
-    {
-        "Code":"Development",
-        "Value":"1"
-    },
-    {
-        "Code":"Authorized",
-        "Value":"2"
+{
+    "ProductInfo": {
+        "Productfamily": [{
+            "Value": "Classic",
+            "Code": "1"
+        }, {
+            "Value": "Modern",
+            "Code": "2"
+        }],
+        "ProductName": "",
+        "ProductClassification": [{
+            "Value": "Biologics",
+            "Code": "1"
+        }, {
+            "Value": "Device",
+            "Code": "2"
+        }, {
+            "Value": "Drug",
+            "Code": "3"
+        }],
+        "ProductCategory": [{
+            "Value": "Development",
+            "Code": "1"
+        }, {
+            "Value": "Authorized",
+            "Code": "2"
+        }],
+        "ProductSubCategory": [{
+            "Value": "API",
+            "Code": "1"
+        }, {
+            "Value": "Formulation",
+            "Code": "2"
+        }],
+        "ProductType": [{
+            "Value": "Generic Product",
+            "Code": "1"
+        }, {
+            "Value": "Innovator Product",
+            "Code": "2"
+        }],
+        "PrescriptionStatus": [{
+            "Value": "OTC",
+            "Code": "1"
+        }, {
+            "Value": "Rx",
+            "Code": "2"
+        }],
+        "OrphanDrug": [{
+            "Value": "Yes",
+            "Code": "1"
+        }, {
+            "Value": "No",
+            "Code": "2"
+        }],
+        "Pediatric": [{
+            "Value": "Yes",
+            "Code": "1"
+        }, {
+            "Value": "No",
+            "Code": "2"
+        }, {
+            "Value": "Both",
+            "Code": "3"
+        }],
+        "ProductOwner": [{
+            "Value": "Admin admin",
+            "Code": "1"
+        }, {
+            "Value": "Naveen",
+            "Code": "2"
+        }],
+        "Active": true
     }
-]
-[
-    {
-        "Code":"API",
-        "Value":"1"
-    },
-    {
-        "Code":"Formulation",
-        "Value":"2"
-    }
-]
-
-[
-    {
-        "Code":"Generic Product",
-        "Value":"1"
-    },
-    {
-        "Code":"Innovator Product",
-        "Value":"2"
-    }
-]
-
-[
-    {
-        "Code":"OTC",
-        "Value":"1"
-    },
-    {
-        "Code":"Rx",
-        "Value":"2"
-    }
-]
-[
-    {
-        "Code":"Yes",
-        "Value":"1"
-    },
-    {
-        "Code":"No",
-        "Value":"2"
-    }
-]
-[
-    {
-        "Code":"Yes",
-        "Value":"1"
-    },
-    {
-        "Code":"No",
-        "Value":"2"
-    },
-    {
-        "Code":"Both",
-        "Value":"3"
-    }
-]
+}
