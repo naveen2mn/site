@@ -1,0 +1,116 @@
+  function renderProductView() {
+            log(productModel)
+            offLoader();
+            
+            var html = '';
+
+            html +=  ' <div class="row pad-bot-8">';
+            html +=  '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">';
+            html +=  '<label class="nls-requierd">Product Family</label>';
+            html +=  '<select class="nls-dropdown" name="ProductFamily">
+            ';
+            html = '<option index="-1">Choose a Product Family</option>';
+            html += generateDropdown(productModel.Lookup.AvailableSubstance, 'Value');
+            $('#AvailableSubstance').empty().append(html);
+
+
+                                <option>Please Choose a Product Family</option>
+                                <option>Classic</option>
+                                <option>Modern</option>
+                                <option>Statins</option>
+                            </select>
+                        </div>
+                 html += `<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <label class="nls-requierd">Product Classification</label>
+                            <select class="nls-dropdown" name="ProductClassification">
+                                <option>Choose a Product Classification</option>
+                                <option>Biologics</option>
+                                <option>Device</option>
+                                <option>Drug</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <label class="nls-requierd">Product Name</label>
+                            <input class="nls-input" name="ProductName">
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <label class="nls-requierd">Product Owner</label>
+                            <select class="nls-dropdown" name="ProductOwner">
+                                <option>Choose a Product Owner</option>
+                                <option>Admin Admin</option>
+                                <option>Sasi Bala</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row pad-bot-8">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <label class="nls-requierd">Product Category</label><br>
+                            <input type="radio" name="ProductCategory" checked="checked"><label>&nbsp;</label><label class="labeltext" name="ProductCategory">Development</label>
+                            <input type="radio" name="ProductCategory"><label>&nbsp;</label><label class="labeltext" name="ProductCategory">Authorized</label>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <label class="tabSubTitle">Product Sub Category</label><br>
+
+
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <label class="tabSubTitle nls-requierd">Orphan Drug</label>
+
+
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <label class="tabSubTitle nls-requierd">Pediatric</label><br>
+
+
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="row pad-bot-8" style="">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <label class="tabSubTitle">Product Type</label>
+
+
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <label class="tabSubTitle">Prescription Status</label>
+
+
+
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <label class="tabSubTitle">Active</label><br>
+                            <input type="checkbox" checked="checked" class="filled-in"><label>&nbsp;</label>
+                        </div>
+                    </div>`;
+            $('#ProductInfo').empty().append(html);
+
+            list = productModel.Lookup;
+            var valid = true;
+            for (var i in list) {
+                if (list[i].length == 0) {
+                    alert(i + 'is not available..!');
+                    valid = false;
+                }
+            }
+
+            if (valid) {
+                html = '<option index="-1">Choose Available Substance</option>';
+                html += generateDropdown(productModel.Lookup.AvailableSubstance, 'Value');
+                $('#AvailableSubstance').empty().append(html);
+
+                html = '<option index="-1">Choose a Document Level</option>';
+                html += generateDropdown(productModel.Lookup.DocumentLevel, 'Value');
+                $('#DocumentLevel').empty().append(html);
+
+                html = '<option index="-1">Choose Document Type</option>';
+                html += generateDropdown(productModel.Lookup.DocumentType, 'Value');
+                $('#DocumentType').empty().append(html);
+
+            }
+
+            renderProductTree();
+            $('#ContentBody').empty().append(html);
+        }
