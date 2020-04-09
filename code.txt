@@ -1,121 +1,90 @@
-function renderProductView() {
-    log(productModel)
-    offLoader();
+// JavaScript source code
+var productModel = {
+    "Lookup": {
+        "AvailableSubstance": [{ "Code": 1, "Value": "Doxepin1111" }, { "Code": 2, "Value": "Ibandronic Acid1232" }, { "Code": 3, "Value": "Hydrocortisone" }, { "Code": 4, "Value": "Paracetomol" }, { "Code": 5, "Value": "Dolo500mg" }],
+        "DocumentLevel": [{ "Code": 1, "Value": "Market" }, { "Code": 2, "Value": "PackSize" }, { "Code": 3, "Value": "Product" }, { "Code": 4, "Value": "Strength" }],
+        "DocumentType": [{ "Code": 1, "Value": "ArtWork1", "Selected": false }, { "Code": 2, "Value": "ArtWork2", "Selected": false }, { "Code": 3, "Value": "ArtWork3", "Selected": false }, { "Code": 4, "Value": "Device Manual", "Selected": false }, { "Code": 5, "Value": "Drugs Facts (OTC)", "Selected": false }, { "Code": 6, "Value": "Medication Guide", "Selected": false }, { "Code": 7, "Value": "Package Insert", "Selected": false }, { "Code": 8, "Value": "Package Labeling - Labels & Cartons", "Selected": false }, { "Code": 9, "Value": "Patient Leaflet", "Selected": false }, { "Code": 10, "Value": "Physician Labeling", "Selected": false }, { "Code": 11, "Value": "PPI", "Selected": false }, { "Code": 12, "Value": "Prescribing Information", "Selected": false }, { "Code": 13, "Value": "Product Circular", "Selected": false }, { "Code": 14, "Value": "Product Labeling", "Selected": false }, { "Code": 15, "Value": "Product Monograph", "Selected": false }, { "Code": 16, "Value": "Rx Drug Labeling", "Selected": false }, { "Code": 17, "Value": "SmPC", "Selected": false }, { "Code": 18, "Value": "User Manual", "Selected": false }],
+        "APIPackageType": [{ "Code": 1, "Value": "Drum" }, { "Code": 2, "Value": "Bottle" }],
+        "APIPackageSize": [{ "Code": 1, "Value": "Bottle of 25" }, { "Code": 2, "Value": "Bottle of 50" }]
+    },
+    "DocumentTypeGrid": [],
+    "ProductInfo": {
+        "ProductFamily": [],
+        "ProductName": "Wonder Drug",
+        "ProductClassification": [],
+        "ProductCategory": [{
+            "Value": "Development",
+            "Code": "1",
+            "Selected": true
+        }, {
+            "Value": "Authorized",
+            "Code": "2"
+        }],
+        "ProductSubCategory": [{
+            "Value": "API",
+            "Code": "1",
+            "Selected": false
+        }, {
+            "Value": "Formulation",
+            "Code": "2",
+            "Selected": true
+        }],
+        "ProductType": [{
+            "Value": "Generic Product",
+            "Code": "1",
+            "Selected": true
+        }, {
+            "Value": "Innovator Product",
+            "Code": "2"
+        }],
+        "PrescriptionStatus": [{
+            "Value": "OTC",
+            "Code": "1",
+            "Selected": true
+        }, {
+            "Value": "Rx",
+            "Code": "2"
+        }],
+        "OrphanDrug": [{
+            "Value": "Yes",
+            "Code": "1",
+            "Selected": true
+        }, {
+            "Value": "No",
+            "Code": "2"
+        }],
+        "Pediatric": [{
+            "Value": "Yes",
+            "Code": "1"
+        }, {
+            "Value": "No",
+            "Code": "2"
+        }, {
+            "Value": "Both",
+            "Code": "3",
+            "Selected": true
+        }],
+        "ProductOwner": [],
+        "Active": true
+    },
 
-    var html = '';
-
-    html += '<div class="row pad-bot-8">';
-    html += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">';
-    html += '<label class="nls-requierd">Product Family</label>';
-    html += '<select class="nls-dropdown" name="ProductFamily">';
-    html += '<option index="-1">Choose a Product Family</option>';
-    html += generateDropdown(productModel.ProductInfo.ProductFamily, 'Value');
-    html += '</select>';
-    html += '</div>';
-    html += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">';
-    html += '<label class="nls-requierd">Product Classification</label>';
-    html += '<select class="nls-dropdown" name="ProductClassification">';
-    html += '<option index="-1">Choose a Product Classification</option>';
-    html += generateDropdown(productModel.ProductInfo.ProductClassification, 'Value');
-    html += '</select>';
-    html += '</div>';
-    html += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">';
-    html += '<label class="nls-requierd">Product Name</label>';
-    html += '<input class="nls-input" name="ProductName" value="' + productModel.ProductInfo.ProductName + '">';
-    html += '</div>';
-    html += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">';
-    html += '<label class="nls-requierd">Product Owner</label>';
-    html += '<select class="nls-dropdown" name="ProductOwner">';
-    html += '<option index="-1">Choose a Product Owner</option>';
-    html += generateDropdown(productModel.ProductInfo.ProductOwner, 'Value');
-    html += '</select>';
-    html += '</div>';
-    html += '</div>';
-
-    html += '<div class="row pad-bot-8">';
-    html += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">';
-    html += '<label class="nls-requierd">Product Category</label><br>';
-    productModel.ProductInfo.ProductCategory.forEach(function (e, index) {
-        var checkedStatus = e.Selected ? 'checked="checked"' : ''
-        html += '<input type="radio" name="ProductCategory" ' + checkedStatus + '><label>&nbsp;</label>';
-        html += '<label class="labeltext nls-checkbox" name="ProductCategory" index="' + index + '">' + e.Value + '</label>';
-    })
-    html += '</div>';
-    html += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">';
-    html += '<label class="">Product Sub Category</label><br>';
-    productModel.ProductInfo.ProductCategory.forEach(function (e, index) {
-        var checkedStatus = e.Selected ? 'checked="checked"' : ''
-        html += '<input type="radio" name="ProductCategory" ' + checkedStatus + '><label>&nbsp;</label>';
-        html += '<label class="labeltext nls-checkbox" name="ProductCategory" index="' + index + '">' + e.Value + '</label>';
-    })
-    html += '</div>';
-    html += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">';
-    html += '<label class="nls-requierd">Orphan Drug</label>';
-    productModel.ProductInfo.ProductSubCategory.forEach(function (e, index) {
-        var checkedStatus = e.Selected ? 'checked="checked"' : ''
-        html += '<input type="radio" name="ProductSubCategory" ' + checkedStatus + '><label>&nbsp;</label>';
-        html += '<label class="labeltext nls-checkbox" name="ProductSubCategory" index="' + index + '">' + e.Value + '</label>';
-    })
-    html += '</div>';
-    html += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">';
-    html += '<label class="nls-requierd">Pediatric</label>';
-    productModel.ProductInfo.Pediatric.forEach(function (e, index) {
-        var checkedStatus = e.Selected ? 'checked="checked"' : ''
-        html += '<input type="radio" name="Pediatric" ' + checkedStatus + '><label>&nbsp;</label>';
-        html += '<label class="labeltext nls-checkbox" name="Pediatric" index="' + index + '">' + e.Value + '</label>';
-    })
-    html += '</div>';
-    html += '</div>';
-
-    html += '<div class="row pad-bot-8" style="">';
-    html += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">';
-    html += '<label class="tabSubTitle">Product Type</label>';
-    productModel.ProductInfo.ProductType.forEach(function (e, index) {
-        var checkedStatus = e.Selected ? 'checked="checked"' : '';
-        html += '<input type="radio" name="ProductType" ' + checkedStatus + '><label>&nbsp;</label>';
-        html += '<label class="labeltext nls-checkbox" name="ProductType" index="' + index + '">' + e.Value + '</label>';
-    })
-    html += '</div>';
-    html += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">';
-    html += '<label class="tabSubTitle">Prescription Status</label>';
-    productModel.ProductInfo.PrescriptionStatus.forEach(function (e, index) {
-        var checkedStatus = e.Selected ? 'checked="checked"' : '';
-        html += '<input type="radio" name="PrescriptionStatus" ' + checkedStatus + '><label>&nbsp;</label>';
-        html += '<label class="labeltext nls-checkbox" name="PrescriptionStatus" index="' + index + '">' + e.Value + '</label>';
-    })
-    html += '</div>';
-    html += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">';
-    html += '<label class="tabSubTitle">Active</label><br>';
-    var checkedStatus = productModel.ProductInfo.Active ? 'checked="checked"' : '';
-    html += '<input type="checkbox" ' + checkedStatus + ' class="filled-in"><label>&nbsp;</label>';
-    html += '</div>';
-    html += '</div>';
-    $('#ProductInfo').empty().append(html);
-
-    list = productModel.Lookup;
-    var valid = true;
-    for (var i in list) {
-        if (list[i].length == 0) {
-            alert(i + 'is not available..!');
-            valid = false;
-        }
+    "Formulation": {
+        "Tree": [{ "id": 1, "pId": 0, "name": "Wonder Drug", "isParent": true, "open": true, "icon": "Images/Icons/Drug_basket_Icon_16.png" }, { "id": 2, "isParent": true, "open": true, "name": "Tablets for Oral Suspension", "Type": "Dosage", "icon": "Images/Icons/Drug_basket_Icon_16.png", "pId": 1, "Attribute": { "ATCCode": "AA", "TherapeuticArea": [{ "Code": 1, "Value": "Diabetes", "Selected": true }, { "Code": 2, "Value": "Diabetes - Type 1", "Selected": true }, { "Code": 3, "Value": "Pain" }, { "Code": 4, "Value": "Heart Failure" }, { "Code": 5, "Value": "Hepatitis C" }, { "Code": 6, "Value": "Influenza" }, { "Code": 7, "Value": "Malaria" }, { "Code": 8, "Value": "Nutrition" }, { "Code": 9, "Value": "Dyslipidemia" }], "Description": "Desc1" } }, { "id": 3, "isParent": false, "name": "1 mg", "icon": "Images/Icons/Drug_basket_Icon_16.png", "pId": 2, "Attribute": { "MedicinalProductName": "Product 1", "QandQComposition": "Des" }, "Excipients": [], "Indications": [], "ExcipientsGrid": [], "IndicationsGrid": [], "PackSize": { "PackageType": [{ "Code": 1, "Value": "Drum" }, { "Code": 2, "Value": "Bottle" }], "PackageSize": [{ "Code": 1, "Value": "Bottle of 25" }, { "Code": 2, "Value": "Bottle of 50" }], "ShelfLife": "", "Storage": "" } }, { "id": 4, "isParent": false, "name": "2 mg", "icon": "Images/Icons/Drug_basket_Icon_16.png", "pId": 2, "Attribute": { "MedicinalProductName": "Product 1", "QandQComposition": "Des" }, "Excipients": [], "Indications": [], "ExcipientsGrid": [], "IndicationsGrid": [], "PackSize": { "PackageType": [{ "Code": 1, "Value": "Drum" }, { "Code": 2, "Value": "Bottle" }], "PackageSize": [{ "Code": 1, "Value": "Bottle of 25" }, { "Code": 2, "Value": "Bottle of 50" }], "ShelfLife": "", "Storage": "" } }],
+        //[{ "id": 1, "pId": 0, "name": "Wonder Drug", "isParent": true, "open": true, "icon": "Images/Icons/Drug_basket_Icon_16.png" }, { "id": 2, "pId": 1, "isParent": true, "open": true, "name": "Tablets for Oral Suspension", "icon": "Images/Icons/Drug_basket_Icon_16.png", "Attribute": { "ATCCode": "AA", "TherapeuticArea": [{ "Code": 1, "Value": "Diabetes" }, { "Code": 2, "Value": "Diabetes - Type 1", "Selected": true }, { "Code": 3, "Value": "Pain" }, { "Code": 4, "Value": "Heart Failure" }, { "Code": 5, "Value": "Hepatitis C" }, { "Code": 6, "Value": "Influenza" }, { "Code": 7, "Value": "Malaria" }, { "Code": 8, "Value": "Nutrition" }, { "Code": 9, "Value": "Dyslipidemia" }], "Description": "Test1" } }, { "id": 3, "pId": 1, "isParent": true, "open": true, "name": "Capsules", "icon": "Images/Icons/Drug_basket_Icon_16.png", "Attribute": { "ATCCode": "AB", "TherapeuticArea": [{ "Code": 1, "Value": "Diabetes" }, { "Code": 2, "Value": "Diabetes - Type 1" }, { "Code": 3, "Value": "Pain", "Selected": true }, { "Code": 4, "Value": "Heart Failure" }, { "Code": 5, "Value": "Hepatitis C" }, { "Code": 6, "Value": "Influenza" }, { "Code": 7, "Value": "Malaria" }, { "Code": 8, "Value": "Nutrition" }, { "Code": 9, "Value": "Dyslipidemia" }], "Description": "dasda" } }, { "id": 4, "pId": 2, "isParent": false, "name": "0.1 mg", "icon": "Images/Icons/Drug_basket_Icon_16.png", "Attribute": { "MedicinalProductName": "P1", "QandQComposition": "Test" }, "Excipients": [{ "Code": 1, "Value": "Test 1" }, { "Code": 2, "Value": "Test 2" }], "Indications": [{ "Code": 1, "Value": "Test 1" }, { "Code": 2, "Value": "Test 2" }], "PackSize": { "PackageType": [{ "Code": 1, "Value": "Drum" }, { "Code": 2, "Value": "Bottle" }], "PackageSize": [{ "Code": 1, "Value": "Bottle of 25" }, { "Code": 2, "Value": "Bottle of 50" }], "ShelfLife": "", "Storage": "" } }, { "id": 5, "pId": 3, "isParent": false, "name": "1 mg", "icon": "Images/Icons/Drug_basket_Icon_16.png", "Attribute": { "MedicinalProductName": "P2", "QandQComposition": "Test 2" }, "Excipients": [], "Indications": [], "PackSize": { "PackageType": [{ "Code": 1, "Value": "Drum" }, { "Code": 2, "Value": "Bottle" }], "PackageSize": [{ "Code": 1, "Value": "Bottle of 25" }, { "Code": 2, "Value": "Bottle of 50" }], "ShelfLife": "", "Storage": "" } }, { "id": 5, "pId": 3, "isParent": false, "name": "2 mg", "icon": "Images/Icons/Drug_basket_Icon_16.png", "Attribute": { "MedicinalProductName": "P2", "QandQComposition": "Test 2" }, "Excipients": [], "Indications": [], "PackSize": { "PackageType": [{ "Code": 1, "Value": "Drum" }, { "Code": 2, "Value": "Bottle" }], "PackageSize": [{ "Code": 1, "Value": "Bottle of 25" }, { "Code": 2, "Value": "Bottle of 50" }], "ShelfLife": "", "Storage": "" } }],
+        "MedicinalProductName": "",
+        "QandQComposition": "",
+        "ATCCode": "",
+        "Description": "",
+        "TherapeuticArea": [{ "Code": 1, "Value": "Diabetes" }, { "Code": 2, "Value": "Diabetes - Type 1" }, { "Code": 3, "Value": "Pain" }, { "Code": 4, "Value": "Heart Failure" }, { "Code": 5, "Value": "Hepatitis C" }, { "Code": 6, "Value": "Influenza" }, { "Code": 7, "Value": "Malaria" }, { "Code": 8, "Value": "Nutrition" }, { "Code": 9, "Value": "Dyslipidemia" }],
+        "DosageForm": [{ "code": 1, "Value": "Tablets for Oral Suspension" }, { "code": 2, "Value": "Capsules" }, { "code": 3, "Value": "Chewable Tablets" }, { "code": 4, "Value": "Delayed Release Capsules" }, { "code": 5, "Value": "Dispersible Tablets" }, { "code": 6, "Value": "Enteric coated Tablets" }, { "code": 7, "Value": "Film coated Tablets" }, { "code": 8, "Value": "Gastro Resistant Capsules" }, { "code": 9, "Value": "Gastro Resistant Tablets" }, { "code": 10, "Value": "Injection" }, { "code": 11, "Value": "Oral Solution" }, { "code": 12, "Value": "Oral Suspension" }, { "code": 13, "Value": "Orally Disintegrating Tablets" }, { "code": 14, "Value": "Orodispersable Tablets" }, { "code": 15, "Value": "Powder for Injection" }, { "code": 16, "Value": "Powder for Oral Solution" }, { "code": 17, "Value": "Powder for Oral suspension" }, { "code": 18, "Value": "Powder for Solution for Infusion" }, { "code": 19, "Value": "Powder for Solution for Injection" }, { "code": 20, "Value": "Prolonged Release Capsules" }, { "code": 21, "Value": "Sugar coated Tablets" }, { "code": 22, "Value": "Sustained Release Capsules" }, { "code": 23, "Value": "Sustained Release Tablets" }, { "code": 24, "Value": "Tablets" }, { "code": 25, "Value": "Tablets (Co-Package)" }, { "code": 26, "Value": "Tablets (Scored)" }, { "code": 27, "Value": "Extended Release Tablet" }, { "code": 28, "Value": "Powder for Solution for Injection or Infusion" }, { "code": 29, "Value": "Hard Tablets" }, { "code": 29, "Value": "Hard Tablets" }],
+        "Strength": [{ "code": 1, "Value": "0.1 mg" }, { "code": 2, "Value": "0.5 mg" }, { "code": 3, "Value": "1 mg" }, { "code": 4, "Value": "1.25 mg" }, { "code": 5, "Value": "2 mg" }, { "code": 6, "Value": "2.5 mg" }, { "code": 7, "Value": "3 mg" }, { "code": 8, "Value": "4 mg" }, { "code": 9, "Value": "5 mg" }, { "code": 10, "Value": "5/20 mg" }, { "code": 11, "Value": "5/40 mg" }, { "code": 12, "Value": "6 mg" }, { "code": 13, "Value": "6.25 mg" }, { "code": 14, "Value": "7.5 mg" }, { "code": 15, "Value": "8 mg" }, { "code": 16, "Value": "10 mg" }, { "code": 17, "Value": "10/12.5 mg" }, { "code": 18, "Value": "10/20 mg" }, { "code": 19, "Value": "10/40 mg" }, { "code": 20, "Value": "12.5 mg" }, { "code": 21, "Value": "15 mg" }, { "code": 22, "Value": "16 mg" }, { "code": 23, "Value": "18 mg" }, { "code": 24, "Value": "20 mg" }, { "code": 25, "Value": "20/12.5 mg" }, { "code": 26, "Value": "24 mg" }, { "code": 27, "Value": "25 mg" }, { "code": 28, "Value": "30 mg" }, { "code": 29, "Value": "30/60mg" }, { "code": 30, "Value": "30/150/200 mg" }, { "code": 31, "Value": "40 mg" }, { "code": 32, "Value": "45 mg" }, { "code": 33, "Value": "50 mg" }, { "code": 34, "Value": "50/8 mg" }, { "code": 35, "Value": "60 mg" }, { "code": 36, "Value": "70 mg" }, { "code": 37, "Value": "80 mg" }, { "code": 38, "Value": "100 mg" }, { "code": 39, "Value": "100/25 mg" }, { "code": 40, "Value": "125 mg" }, { "code": 41, "Value": "150 mg" }, { "code": 42, "Value": "150/300 mg" }, { "code": 43, "Value": "150/300 mg + 600 mg" }, { "code": 44, "Value": "150/300/200 mg" }, { "code": 45, "Value": "160 mg" }, { "code": 46, "Value": "200 mg" }, { "code": 47, "Value": "200/50 mg" }, { "code": 48, "Value": "200/300 mg" }, { "code": 49, "Value": "250 mg" }, { "code": 50, "Value": "250-125 mg" }, { "code": 51, "Value": "300 mg" }, { "code": 52, "Value": "300/300 mg" }, { "code": 53, "Value": "320 mg" }, { "code": 54, "Value": "375 mg" }, { "code": 55, "Value": "400 mg" }, { "code": 56, "Value": "500 mg" }, { "code": 57, "Value": "500-125 mg" }, { "code": 58, "Value": "600 mg" }, { "code": 59, "Value": "600/200/300 mg" }, { "code": 60, "Value": "600/300 mg" }, { "code": 61, "Value": "600/300/300 mg" }, { "code": 62, "Value": "625 mg" }, { "code": 63, "Value": "750 mg" }, { "code": 64, "Value": "800 mg" }, { "code": 65, "Value": "850 mg" }, { "code": 66, "Value": "875-125 mg" }, { "code": 67, "Value": "1000 mg" }, { "code": 68, "Value": "1500 mg" }, { "code": 69, "Value": "2000 mg" }, { "code": 70, "Value": "1 g" }, { "code": 71, "Value": "1.2 g" }, { "code": 72, "Value": "1.5 g" }, { "code": 73, "Value": "2 g" }, { "code": 74, "Value": "2.25 g" }, { "code": 75, "Value": "3.0 g" }, { "code": 76, "Value": "4.5 g" }, { "code": 77, "Value": "5 ml" }, { "code": 78, "Value": "10 ml" }, { "code": 79, "Value": "1 mg/ml" }, { "code": 80, "Value": "4 mg/2ml" }, { "code": 81, "Value": "8 mg/4ml" }, { "code": 82, "Value": "10 mg/ml" }, { "code": 83, "Value": "20 mg/ml" }, { "code": 84, "Value": "40 mg/5ml" }, { "code": 85, "Value": "50 mg/5ml" }, { "code": 86, "Value": "50 mg/ml" }, { "code": 87, "Value": "100 mg/2ml" }, { "code": 88, "Value": "100 mg/5ml" }, { "code": 89, "Value": "125 mg/5 ml" }, { "code": 90, "Value": "125-31.25 mg/5 ml" }, { "code": 91, "Value": "156.25 mg/5 mL" }, { "code": 92, "Value": "240 mg/5 mL" }, { "code": 93, "Value": "250 mg/5 ml" }, { "code": 94, "Value": "250-62.50 mg/5 ml" }, { "code": 95, "Value": "312.50 mg/5 ml" }, { "code": 96, "Value": "25 mg & 30 mg" }, { "code": 97, "Value": "40 mg / 12.5 mg" }, { "code": 98, "Value": "80 mg / 12.5 mg" }, { "code": 99, "Value": "5 mg / 5 ml" }],
+    }, "RLD": {
+        "RLDName": "",
+        "RLDDueDate": "",
+        "RLDRemarks": ""
+    }, "API": {
+        "APIShelfLife": "",
+        "APIStorage": "",
+        "APIGrid": []
     }
-
-    if (valid) {
-        html = '<option index="-1">Choose Available Substance</option>';
-        html += generateDropdown(productModel.Lookup.AvailableSubstance, 'Value');
-        $('#AvailableSubstance').empty().append(html);
-
-        html = '<option index="-1">Choose a Document Level</option>';
-        html += generateDropdown(productModel.Lookup.DocumentLevel, 'Value');
-        $('#DocumentLevel').empty().append(html);
-
-        html = '<option index="-1">Choose Document Type</option>';
-        html += generateDropdown(productModel.Lookup.DocumentType, 'Value');
-        $('#DocumentType').empty().append(html);
-
-    }
-
-    renderProductTree();
-    $('#ContentBody').empty().append(html);
 }
